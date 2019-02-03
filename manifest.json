@@ -1,0 +1,14 @@
+{
+    "name": "Twitch Chrome Friendly",
+    "version": "1.0",
+    "description": "Add another user's followers.",
+    "permissions": [
+        "storage", 
+        "cookies"
+    ],
+    "background": {
+        "scripts": ["friendly.js"],
+        "persistent": false
+    },
+    "manifest_version": 2
+  }
