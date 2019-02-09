@@ -4,7 +4,8 @@
     "description": "Add another user's followers.",
     "permissions": [
         "storage", 
-        "cookies"
+        "cookies", 
+        "contextMenus"
     ],
     "background": {
         "scripts": ["friendly.js"],
