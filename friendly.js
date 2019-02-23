@@ -1,4 +1,5 @@
 const CLIENTID = 'eskb1rltcdwllydj806d0txcccsks2';
+const AUTHCOOKIE = 'auth-token';
 
 function getUsersByName(userNames, clientID) {
     var url = new URL('https://api.twitch.tv/kraken/users');
@@ -33,4 +34,18 @@ function getUserFollows(authToken, clientID, userName) {
             "Client-ID": clientID, 
             "Authorization": "OAuth "+authToken}
     }).then(response => response.json());
+}
+
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) {
+        return parts.pop().split(";").shift(); 
+    } else {
+        return null;
+    }
+}
+
+function getAuthToken() {
+    return getCookie(AUTHCOOKIE);
 }
